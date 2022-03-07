@@ -50,7 +50,7 @@ b.grid(row=3,sticky=W)
 
 
 # add thing to change the text if selection is done
-text1 = Label(root, text='Select Button to change the color \nsimply deselect to choose another color', font="Tahoma")
+text1 = Label(root, text='Select Button to change the color \nsimply deselect to choose another color', font="Tahoma", bg="Purple")
 text1.grid(row=6, column=15, pady = 50, padx = 50)
 
 
