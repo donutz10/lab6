@@ -4,11 +4,21 @@ import tkinter as tk
 
 
 root = tk.Tk()
-
-Tk()
-
+root.geometry("300x300")
 root.title('Color changer')
-tabControl = ttk.Notebook(root)
-tab1 = ttk.Frame(tabControl)
-tabControl.add(tab1, text='tab1')
-ttk.Label(tab1, text = "Text")
+
+green = IntVar()
+Checkbutton(text ="Green", variable = green).grid(row=1,stick=W)
+red = IntVar()
+Checkbutton(text ="Red", variable = red).grid(row=2,sticky=W)
+blue = IntVar()
+Checkbutton(text ="Blue", variable = blue).grid(row=3,sticky=W)
+
+
+
+Label(root, text='green',bg="green", font="Tahoma").grid(row=6, column=15, pady = 50, padx = 50)
+
+
+root.mainloop()
+
+
