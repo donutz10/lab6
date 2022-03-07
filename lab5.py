@@ -18,15 +18,15 @@ def is_checked():
         r.deselect()
         text1 = Label(root, bg="blue", text='Select Button to change the color \nsimply deselect to choose another color', font="Tahoma")
         text1.grid(row=6, column=15, pady = 50, padx = 50)
-    else:
-        r.deselect()
-        b.deselect()
-        g.deselect()
 
+        
+############## need to fix no selection on default and remove labels if none were selected
 
 root = tk.Tk()
 root.geometry("450x450")
 root.title('Color changer')
+
+
 
 
 
@@ -50,8 +50,7 @@ b.grid(row=3,sticky=W)
 
 
 # add thing to change the text if selection is done
-text1 = Label(root, text='Select Button to change the color \nsimply deselect to choose another color', font="Tahoma", bg="Purple")
-text1.grid(row=6, column=15, pady = 50, padx = 50)
+
 
 
 root.mainloop()
