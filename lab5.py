@@ -26,13 +26,15 @@ b = Checkbutton(root, text ="Blue", variable=b1)
 
 b.grid(row=3,sticky=W)
 
-
+#### fix this and add only one choice
 def one_Choice():
     anyChecked = b1.get() | r1.get() | g1.get()
     if anyChecked:
         root.destroy()
     else:
         print("error")
+
+# add thing to change the text if selection is done
 Label(root, text='green',bg="green", font="Tahoma").grid(row=6, column=15, pady = 50, padx = 50)
 
 
