@@ -2,57 +2,33 @@ from tkinter import *
 from tkinter import ttk
 import tkinter as tk
 
-def is_checked():
-    if g1.get() == 1:
-        r.deselect()
-        b.deselect()
-        text1 = Label(root, bg="green", text='Select Button to change the color \nsimply deselect to choose another color', font="Tahoma")
-        text1.grid(row=6, column=15, pady = 50, padx = 50)
-    elif r1.get() == 1:
-        g.deselect()
-        b.deselect()
-        text1 = Label(root, bg="red", text='Select Button to change the color \nsimply deselect to choose another color', font="Tahoma")
-        text1.grid(row=6, column=15, pady = 50, padx = 50)
-    elif b1.get() == 1:
-        g.deselect()
-        r.deselect()
-        text1 = Label(root, bg="blue", text='Select Button to change the color \nsimply deselect to choose another color', font="Tahoma")
-        text1.grid(row=6, column=15, pady = 50, padx = 50)
-
-        
-############## need to fix no selection on default and remove labels if none were selected
-
 root = tk.Tk()
-root.geometry("450x450")
+root.geometry("350x350")
+r = IntVar()
 root.title('Color changer')
 
 
+def color(value):
+    if value == 1:
+        myLabel = Label(root, text="You have selected Red", bg="red", fg="white")
+        myLabel.pack()
+    elif value == 2:
+        myLabel = Label(root, text="You have selected Blue", bg="Blue", fg="white")
+        myLabel.pack()
+    elif value == 3:
+        myLabel = Label(root, text="You have selected Green", bg="green", fg="white")
+        myLabel.pack()
+        
 
 
 
-i = IntVar()
-g1 = IntVar()
-r1 = IntVar()
-b1 = IntVar()
-
-g = Checkbutton(root, text ="Green", variable=g1 , bg="green", command=is_checked)
-g.grid(row=1,stick=W)
-
-r = Checkbutton(root, text ="Red", variable=r1, bg="red", command=is_checked)
-r.grid(row=2,sticky=W)
+Radiobutton(root, text="Red", variable = r, value = 1,command=lambda: color(r.get())).pack()
+Radiobutton(root, text="Blue", variable = r, value = 2, command= lambda: color(r.get())).pack()
+Radiobutton(root, text="green", variable = r, value = 3, command=lambda: color(r.get())).pack()
 
 
-b = Checkbutton(root, text ="Blue", variable=b1, bg="blue", command=is_checked)
-b.grid(row=3,sticky=W)
+myLabel = Label(root, text="No selection provided", bg='purple')
+myLabel.pack()
 
 
-#### fix this and add only one choice
-
-
-# add thing to change the text if selection is done
-
-
-
-root.mainloop()
-
-
+mainloop()
