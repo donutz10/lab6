@@ -23,7 +23,7 @@ def color(value):
         myLabel.pack()
     elif value == 3:
         myLabel.destroy()
-        myLabel = Label(root, text="You have selected Green", bg="green", fg="white")
+        myLabel = Label(root, text="You have selected Green", bg="green", fg="black")
         myLabel.pack()
         
 
